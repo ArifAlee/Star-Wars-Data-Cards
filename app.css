@@ -1,0 +1,94 @@
+/* body {
+  background:url('/images/d8ql17e0m7g51.jpg') ;
+} */
+
+.container {
+  border: 2px solid red;
+  width: 90vh;
+  height: 60vh;
+  justify-self:center;
+  margin-top:5%;
+}
+
+.title-heading,
+.user-input {
+  justify-self: center;
+  text-align: center;
+}
+
+.card-container {
+  border: 2px solid grey;
+  border-radius: 8px;
+  margin-top: 25px;
+  width: 60vh;
+  height: 35vh;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.name-container {
+  padding-left: 10px;
+}
+
+.main-info-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.card-top-info {
+  border: 1px solid grey;
+  border-bottom:2px solid grey;
+}
+
+/* image -----------*/
+.char-image {
+  border-bottom-left-radius: 8px;
+  height: 22.7vh;
+  width: 19vh;
+}
+
+/* --------------*/
+
+.card-main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.char-details {
+  border-left: 2px solid grey;
+  border-right: 0px;
+  width: 100%;
+}
+
+.card-signature {
+  border: 2px solid grey;
+}
+
+/* TABLE -------------------------- */
+.top-table,
+.top-td,
+.top-theaders {
+  text-align: center;
+  justify-self: center;
+}
+
+.hair-color,
+.skin-color,
+.eye-color,
+.homeworld {
+  width: 15%;
+}
+
+.main-tr th {
+    text-align: left;
+    padding-left: 25px; 
+    height: 35px; 
+}
+
+.main-tr td {
+  padding-left:15px
+}

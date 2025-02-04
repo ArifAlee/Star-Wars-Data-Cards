@@ -1,0 +1,98 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Star Wars Data Cards</title>
+</head>
+
+<body>
+    <div class="container">
+    <div class="title-heading">
+        <h1>Star Wars Data Cards</h1>
+        <p> Find quick info on any of your favourite Star Wars character</p>
+    </div>
+
+    <div class="user-input">
+        <label for="input">Character name:</label>
+        <input type="text" name="input" id="input">
+        <button type="submit">Submit</button>
+    </div>
+
+    <div class="card-container">
+        <div class="name-container">
+            <h2 class="char-name">Character name</h2>
+        </div>
+
+        <!-- Top card info for hair, skin, eye and homeworld -->
+        <div class="card-top-info">
+            <table class="top-table">
+                <thead>
+                    <tr class="top-theaders">
+                        <th> Hair Colour </th>
+                        <th> Skin Colour </th>
+                        <th> Eye Colour </th>
+                        <th> Homeworld </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="top-td">
+                        <td class="hair-color"> Blond </td>
+                        <td class="skin-color"> Fair </td>
+                        <td class="eye-color"> Blue </td>
+                        <td class="homeworld"> Tattooine </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="main-info-container">
+
+            <div class="image-card">
+                <img src="/images/images.jpeg" alt="Character image" class="char-image">
+            </div>
+
+            <div class="card-main">
+                <div class="char-details">
+                    <table>
+                        <thead>
+                            <tr class="main-tr">
+                                <th> Name </th>
+                                <td class="name">Luke Skywalker </td>
+                            </tr>
+                            <tr class="main-tr">
+                                <th> Height </th>
+                                <td class="height"> 172 </td>
+                            </tr>
+                            <tr class="main-tr">
+                                <th> Birth Year </th>
+                                <td class="birth-year"> 77 </td>
+                            </tr>
+                            <tr class="main-tr">
+                                <th> Gender </th>
+                                <td class="gender"> Male </td>
+                            </tr>
+                        </thead>
+
+                    </table>
+                </div>
+
+                <div class="card-signature">
+                    <p>-------signature will go here---------</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
