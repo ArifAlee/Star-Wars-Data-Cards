@@ -2,7 +2,7 @@ import { Characters } from "./characters.js";
 
 const input = document.querySelector("#input");
 const submitBtn = document.querySelector("button");
-const name = document.querySelector(".name");
+const mass = document.querySelector(".mass");
 const height = document.querySelector(".height");
 const birthYear = document.querySelector(".birth-year");
 const gender = document.querySelector(".gender");
@@ -13,14 +13,14 @@ const homeworld = document.querySelector(".homeworld");
 
 submitBtn.addEventListener("click", () => {
   const userInput = input.value;
-  // updateChar(userInput);
+  updateChar(userInput);
   updateCharDetails(userInput);
 });
 // Submit by pressing ENTER
 input.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     const userInput = input.value;
-    // updateChar(userInput);
+    updateChar(userInput);
     updateCharDetails(userInput)
   }
 });
@@ -40,9 +40,8 @@ const updateChar = async function (name) {
 const updateCharDetails = async function (char) {
   try {
     const charDetails = await getCharObj(char);
-    name.textContent = charDetails.name;
+    mass.textContent = charDetails.mass;
     height.textContent = charDetails.height;
-    // mass.textContent = charDetails.mass; -----include!!
     birthYear.textContent = charDetails.birth_year;
     gender.textContent = charDetails.gender;
     hairColor.textContent = charDetails.hair_color;
@@ -63,6 +62,8 @@ const getCharData = async function (num) {
     console.log("Error fetching data", error);
   }
 };
+
+//Get homeworld data
 
 // Function retrieves all data and stores it
 const allData = async function () {
