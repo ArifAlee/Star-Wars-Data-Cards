@@ -1,7 +1,7 @@
-import { Characters } from "./characters.js";
 
 const input = document.querySelector("#input");
 const submitBtn = document.querySelector("button");
+const charh1 = document.querySelector(".char-name");
 const mass = document.querySelector(".mass");
 const height = document.querySelector(".height");
 const birthYear = document.querySelector(".birth-year");
@@ -11,35 +11,39 @@ const skinColor = document.querySelector(".skin-color");
 const eyeColor = document.querySelector(".eye-color");
 const homeworld = document.querySelector(".homeworld");
 
-submitBtn.addEventListener("click", () => {
-  const userInput = input.value;
-  updateChar(userInput);
-  updateCharDetails(userInput);
-});
-// Submit by pressing ENTER
-input.addEventListener("keypress", (event) => {
-  if (event.key === "Enter") {
-    const userInput = input.value;
-    updateChar(userInput);
-    updateCharDetails(userInput)
+let characters;
+
+// Get data from starwars api
+const getCharData = async function () {
+  const charData = [];
+  let requests = [];
+  for (let i = 1; i < 84; i++) {
+    if (i === 17) continue;
+    //no details found for #17, will be skipped
+      
+    requests.push(axios.get(`https://swapi.dev/api/people/${i}`)
+    .then(res => charData.push(res.data))
+    .catch(error => console.log(`Error fetching data for characters ${i}`, error)))
   }
-});
+  await Promise.all(requests)
+  return charData;
+};
+
+
+const getCharObj = (name) => {
+    return characters.find(character => character.name.toLowerCase() === name.toLowerCase()); 
+};
 
 // Function updates h1 where name is displayed
-const updateChar = async function (name) {
-  const charh1 = document.querySelector(".char-name");
-  try {
-    const charName = await getCharObj(name);
-    charh1.textContent = charName.name;
-  } catch (error) {
-    console.log("Error updating name", error);
-  }
+const updateChar = (name) => {
+    const charName =  getCharObj(name);
+    charh1.textContent = charName.name ? charName.name : "Character not found"
 };
 
 // Function to update all details fields
-const updateCharDetails = async function (char) {
-  try {
-    const charDetails = await getCharObj(char);
+const updateCharDetails = (name) => {
+    const charDetails = getCharObj(name);
+    if(charDetails){
     mass.textContent = charDetails.mass;
     height.textContent = charDetails.height;
     birthYear.textContent = charDetails.birth_year;
@@ -48,52 +52,39 @@ const updateCharDetails = async function (char) {
     skinColor.textContent = charDetails.skin_color;
     eyeColor.textContent = charDetails.eye_color;
     homeworld.textContent = charDetails.homeworld;
-  } catch (error) {
-    console.log("Error updating details", error);
+  } else {
+    console.log("Character details not found");
   }
 };
 
-// Get data from starwars api
-const getCharData = async function (num) {
+// USER INPUT HANDLER
+const handleUserInput = () => {
+  const userInput = input.value.trim()
+  if (userInput){
+    updateChar(userInput)
+    updateCharDetails(userInput)
+  }
+}
+
+// EVENT LISTENERS
+document.addEventListener("DOMContentLoaded", async() => {
   try {
-    const res = await axios.get(`https://swapi.dev/api/people/${num}`);
-    return res.data;
-  } catch (error) {
-    console.log("Error fetching data", error);
+    characters = await getCharData();
+    console.log(characters)
+  } catch(error) {
+    console.log("Unable to get character data", error)
   }
-};
+});
 
-//Get homeworld data
 
-// Function retrieves all data and stores it
-const allData = async function () {
-  const charData = [];
-  for (let i = 1; i < 84; i++) {
-    if (i === 17) {
-      //no details found for #17, will be skipped
-      continue;
-    }
-    try {
-      const data = await getCharData(i);
-      charData.push(data);
-    } catch (error) {
-      console.log("Error retrieving data", error);
-    }
+
+submitBtn.addEventListener("click", handleUserInput)
+// Submit by pressing ENTER
+input.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+   handleUserInput();
   }
-  return charData;
-};
+});
 
-const getCharObj = async function (name) {
-  try {
-    const characters = await allData();
-
-    return characters.find(
-      (character) => character.name.toLowerCase() === name.toLowerCase()
-    );
-    // console.log(characters.charData.map((char) => char.name))
-  } catch (error) {
-    console.log("Error creating object", error);
-  }
-};
 
 
