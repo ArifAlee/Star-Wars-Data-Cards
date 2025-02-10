@@ -67,7 +67,6 @@ input {
 }
 
 .gif {
-  border-top:2px solid grey;
   width:100%;
   height: 85px; 
   display: flex;
