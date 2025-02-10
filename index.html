@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="app.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.cdnfonts.com/css/star-wars" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap" rel="stylesheet">
     <title>Star Wars Data Cards</title>
 </head>
@@ -14,11 +15,11 @@
     <div class="container">
         <div class="title-heading">
             <h1>Star Wars Data Cards</h1>
-            <p> Find quick info on any of your favourite Star Wars character</p>
+            <p> Character data for your favourite Star Wars character</p>
         </div>
 
         <div class="user-input">
-            <label for="input">Character name:</label>
+            <label for="input"> Name: </label>
             <input type="text" name="input" id="input">
             <button type="submit">Submit</button>
         </div>
@@ -28,34 +29,11 @@
                 <h2 class="char-name">Character name</h2>
             </div>
 
-            <!-- Top card info for hair, skin, eye and homeworld -->
-            <div class="card-top-info">
-                <table class="top-table">
-                    <thead>
-                        <tr class="top-theaders">
-                            <th> Hair Colour </th>
-                            <th> Skin Colour </th>
-                            <th> Eye Colour </th>
-                            <th> Homeworld </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="top-td">
-                            <td class="hair-color"> Blond </td>
-                            <td class="skin-color"> Fair </td>
-                            <td class="eye-color"> Blue </td>
-                            <td class="homeworld"> Tattooine </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
             <div class="main-info-container">
-
 
                 <div class="card-main">
                     <div class="char-details">
-                        <table>
+                        <table class="table-1">
                             <thead>
                                 <tr class="main-tr">
                                     <th> Mass </th>
@@ -74,21 +52,43 @@
                                     <td class="gender"> Male </td>
                                 </tr>
                             </thead>
-
                         </table>
+
+                        <table class="table-2">
+                            <thead>
+                                <tr class="main-tr">
+                                    <th> Hair Color </th>
+                                    <td class="hair-color">Obi-Wan Kenobi  </td>
+                                </tr>
+                                <tr class="main-tr">
+                                    <th> Skin Color </th>
+                                    <td class="skin-color"> 172 </td>
+                                </tr>
+                                <tr class="main-tr">
+                                    <th> Eye Color </th>
+                                    <td class="eye-color"> 77 </td>
+                                </tr>
+                                <tr class="main-tr">
+                                    <th> Homeworld </th>
+                                    <td class="homeworld"> Male </td>
+                                </tr>
+                            </thead>
+                        </table>
+
                     </div>
 
-                    <div class="card-signature">
-                        <p>-------signature will go here---------</p>
-                    </div>
-
+                    
                 </div>
-
+                
             </div>
-
+            <div class="gif">
+                <img src="images/1280x1024-rocket-7485527-6136344.gif" alt="spaceship gif" class="gif-rotate">
+            </div>
+            
         </div>
+    
     </div>
-
+    
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

@@ -1,5 +1,5 @@
+
 .container {
-  border: 2px solid red;
   width: 90vh;
   height: 60vh;
   justify-self: center;
@@ -8,30 +8,38 @@
   font-size: larger;
 }
 
-
-.title-heading,
+.title-heading h1 {
+  font-family: "Star Wars", "Smooch Sans";
+  justify-content: center;
+  text-align: center;
+}
+.title-heading p,
 .user-input,
 button,
 input {
   justify-self: center;
   text-align: center;
-  font-family: 'Smooch Sans';
+  font-family: "Smooch Sans";
   font-size: large;
 }
 
 .card-container {
-  border: 2px solid grey;
+  background-color:rgba(217, 201, 27, 0.167);
+  border: 3px solid #f2c300;
+  border-bottom: 20px solid #f2c300;
   border-radius: 8px;
   margin-top: 25px;
   width: 60vh;
-  height: 35vh;
+  height: 30vh;
   justify-self: center;
   display: flex;
   flex-direction: column;
 }
 
 .name-container {
-  padding-left: 10px;
+  text-align: center;
+  background-color: #f2c300;
+  height:75px;
 }
 
 .main-info-container {
@@ -40,44 +48,56 @@ input {
   display: flex;
 }
 
-.card-top-info {
-  border: 1px solid grey;
-  border-bottom: 2px solid grey;
-}
-
 
 /* --------------*/
 
 .card-main {
+  margin-bottom:-25px;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  border-top: 2px solid grey;
 }
 
 .char-details {
-  border-left: 2px solid grey;
-  border-right: 0px;
   width: 100%;
+  display: flex;
+  justify-content: space-around;
 }
 
-.card-signature {
-  border: 2px solid grey;
+.gif {
+  border-top:2px solid grey;
+  width:100%;
+  height: 85px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
 }
+.gif-rotate {
+  transform: rotate(90deg);
+  height: 100%;
+  width: auto; 
+  position: relative;
+  animation: moveGif 10s linear infinite; 
+}
+@keyframes moveGif {
+  0% {
+      left: -100%; /* Start off-screen */
+  }
+  100% {
+      left: 100%; /* Move to the right edge of the footer */
+  }
+}
+
 
 /* TABLE -------------------------- */
-.top-table,
+
 .top-td,
 .top-theaders {
   text-align: center;
   justify-self: center;
-}
-
-.hair-color,
-.skin-color,
-.eye-color,
-.homeworld {
-  width: 15%;
 }
 
 .main-tr th {
@@ -88,4 +108,12 @@ input {
 
 .main-tr td {
   padding-left: 15px;
+}
+
+.table-1 {
+  margin-left: -45px;
+}
+.table-2 {
+  margin-left: -175px;
+  width: 200px;
 }
