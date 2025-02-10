@@ -1,4 +1,3 @@
-
 .container {
   width: 90vh;
   height: 60vh;
@@ -67,6 +66,7 @@ input {
 }
 
 .gif {
+  border-top: 2px solid grey;
   width:100%;
   height: 85px; 
   display: flex;
@@ -76,7 +76,8 @@ input {
 }
 .gif-rotate {
   transform: rotate(90deg);
-  height: 100%;
+  width:100%;
+  height: 90%;
   width: auto; 
   position: relative;
   animation: moveGif 10s linear infinite; 
