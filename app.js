@@ -13,7 +13,7 @@ const homeworld = document.querySelector(".homeworld");
 let characters;
 
 
-// Get all data from Star Wars API, pagination, results concatted ..
+// Get all data from Star Wars API, pagination, results concatted
 const getAllCharacters = async () => { 
   let characters = [];
   let url = "https://swapi.dev/api/people/";
