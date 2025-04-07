@@ -1,3 +1,4 @@
+
 .container {
   width: 90vh;
   height: 60vh;
@@ -14,18 +15,70 @@
 }
 .title-heading p,
 .user-input,
-button,
-input {
+button {
   justify-self: center;
   text-align: center;
   font-family: "Smooch Sans";
   font-size: large;
+  cursor: pointer;
 }
 
+.search-box{
+  width: 500px;
+  background: #fff;
+  margin:50px auto 0;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+.row{
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+input{
+  flex: 1;
+  height: 25px;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  font-size: 18px;
+  color: #333;
+  font-family: "Smooch Sans";
+  text-align: center;
+  
+
+}
+::placeholder{
+  color:#555
+}
+.result-box ul {
+  border-top: 1px solid #999;
+  padding: 15px 10px;
+}
+.result-box ul li {
+  list-style: none;
+  border-radius:3px;
+  padding: 15px 10x;
+  cursor: pointer;
+}
+.result-box ul li:hover{
+  background: #e9f3ff;
+}
+.result-box{
+  max-height: 300px;
+  overflow-y:scroll;
+  text-align: center;
+  display: none;
+
+}
+
+
+
 .card-container {
-  background-color:rgba(217, 201, 27, 0.167);
-  border: 3px solid #f2c300;
-  border-bottom: 20px solid #f2c300;
+  background-color: #002F6C;
+  /* background-color:rgba(217, 201, 27, 0.167); */
+  border: 3px solid #ad7d37	;
+  border-bottom: 20px solid #ad7d37	;
   border-radius: 8px;
   margin-top: 25px;
   width: 60vh;
@@ -34,11 +87,17 @@ input {
   display: flex;
   flex-direction: column;
 }
+/* #111184 - blue*/ 
+/* #f2c300 yellow */
+/* #50C878 emerald geen 377e4f */ 
 
 .name-container {
   text-align: center;
-  background-color: #f2c300;
+  background-color: #2e557c;
   height:75px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  color:#ad7d37	;
 }
 
 .main-info-container {
@@ -56,7 +115,7 @@ input {
   height: 100%;
   display: flex;
   flex-direction: column;
-  border-top: 2px solid grey;
+  border-top: 2px solid #ad7d37	;
 }
 
 .char-details {
@@ -66,13 +125,14 @@ input {
 }
 
 .gif {
-  border-top: 2px solid grey;
+  border-top: 2px solid #ad7d37	;
   width:100%;
   height: 85px; 
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden; 
+  background-color: #2e557c; 
 }
 .gif-rotate {
   transform: rotate(90deg);
@@ -112,8 +172,11 @@ input {
 
 .table-1 {
   margin-left: -45px;
+  color: #ad7d37;
 }
 .table-2 {
   margin-left: -175px;
   width: 200px;
+  color:#ad7d37;
 }
+

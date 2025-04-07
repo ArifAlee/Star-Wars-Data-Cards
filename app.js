@@ -9,6 +9,7 @@ const hairColor = document.querySelector(".hair-color");
 const skinColor = document.querySelector(".skin-color");
 const eyeColor = document.querySelector(".eye-color");
 const homeworld = document.querySelector(".homeworld");
+const resultsBox = document.querySelector(".result-box");
 
 let characters;
 
@@ -17,6 +18,7 @@ let characters;
 const getAllCharacters = async () => { 
   let characters = [];
   let url = "https://swapi.dev/api/people/";
+  
 
   try {
     while (url) {
@@ -127,12 +129,17 @@ const handleUserInput = () => {
     updateChar(userInput);
     updateCharDetails(userInput);
   }
+  resultsBox.style.display = "none";
 };
 
 // EVENT LISTENERS
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     characters = await getAllCharacters();
+    input.placeholder = "Character name"
+    input.toggleAttribute("disabled")
+    console.log(characters)
+    
   } catch (error) {
     console.log("Unable to get character data", error);
   }
@@ -142,5 +149,8 @@ submitBtn.addEventListener("click", handleUserInput);
 input.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     handleUserInput();
+    resultsBox.style.display = "none"; // Hide the results box when no suggestions
+
   }
 });
+

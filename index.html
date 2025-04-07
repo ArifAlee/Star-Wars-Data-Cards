@@ -1,5 +1,5 @@
 <html lang="en">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,15 +18,21 @@
             <p> Character data for your favourite Star Wars character</p>
         </div>
 
-        <div class="user-input">
-            <label for="input"> Name: </label>
-            <input type="text" name="input" id="input">
-            <button type="submit">Submit</button>
+        <div class="search-box"> <!--user-input -->
+            <div class="row">
+                <input type="text" name="input" id="input" disabled placeholder="Loading..." autocomplete="off"> <!--add ddisabled-->
+                <button type="submit">Search</i></button>
+            </div>
+            <div class="result-box">
+                <ul id="item-list">
+                    <!--items dynamically suggested-->
+                </ul>
+            </div>
         </div>
 
         <div class="card-container">
             <div class="name-container">
-                <h2 class="char-name">Character name</h2>
+                <h2 class="char-name">ID Card</h2>
             </div>
 
             <div class="main-info-container">
@@ -58,7 +64,7 @@
                             <thead>
                                 <tr class="main-tr">
                                     <th> Hair Color </th>
-                                    <td class="hair-color">Obi-Wan Kenobi  </td>
+                                    <td class="hair-color">Obi-Wan Kenobi </td>
                                 </tr>
                                 <tr class="main-tr">
                                     <th> Skin Color </th>
@@ -77,22 +83,23 @@
 
                     </div>
 
-                    
+
                 </div>
-                
+
             </div>
             <div class="gif">
                 <img src="images/1280x1024-rocket-7485527-6136344.gif" alt="spaceship gif" class="gif-rotate">
             </div>
-            
+
         </div>
-        
+
     </div>
-    
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="app.js"></script>
+    <script type="module" src="autocomplete.js"></script>
 </body>
 
 </html>
