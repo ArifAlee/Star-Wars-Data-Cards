@@ -86,7 +86,7 @@ let characterNames = [
 const resultsBox = document.querySelector(".result-box");
 const input = document.querySelector("#input");
 const list = document.querySelector("#item-list");
-
+const submitButton = document.querySelector("button")
 input.onkeyup = function () {
   let suggestions = [];
   let inputs = input.value;
@@ -118,5 +118,6 @@ list.addEventListener("click", (e) => {
     const name = e.target.innerText;
     input.value = name;
     resultsBox.style.display = "none"; // Hide the results box when clicked
-  }
+    submitButton.click();
+}
 });

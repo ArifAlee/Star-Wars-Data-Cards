@@ -150,7 +150,6 @@ input.addEventListener("keypress", (event) => {
   if (event.key === "Enter") {
     handleUserInput();
     resultsBox.style.display = "none"; // Hide the results box when no suggestions
-
   }
 });
 

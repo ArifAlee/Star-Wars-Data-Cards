@@ -1,5 +1,5 @@
+<!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,94 +12,90 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="title-heading">
-            <h1>Star Wars Data Cards</h1>
-            <p> Character data for your favourite Star Wars character</p>
-        </div>
-
-        <div class="search-box"> <!--user-input -->
-            <div class="row">
-                <input type="text" name="input" id="input" disabled placeholder="Loading..." autocomplete="off"> <!--add ddisabled-->
-                <button type="submit">Search</i></button>
-            </div>
-            <div class="result-box">
-                <ul id="item-list">
-                    <!--items dynamically suggested-->
-                </ul>
-            </div>
-        </div>
-
-        <div class="card-container">
-            <div class="name-container">
-                <h2 class="char-name">ID Card</h2>
-            </div>
-
-            <div class="main-info-container">
-
-                <div class="card-main">
-                    <div class="char-details">
-                        <table class="table-1">
-                            <thead>
-                                <tr class="main-tr">
-                                    <th> Mass </th>
-                                    <td class="mass">Luke Skywalker </td>
-                                </tr>
-                                <tr class="main-tr">
-                                    <th> Height </th>
-                                    <td class="height"> 172 </td>
-                                </tr>
-                                <tr class="main-tr">
-                                    <th> Birth Year </th>
-                                    <td class="birth-year"> 77 </td>
-                                </tr>
-                                <tr class="main-tr">
-                                    <th> Gender </th>
-                                    <td class="gender"> Male </td>
-                                </tr>
-                            </thead>
-                        </table>
-
-                        <table class="table-2">
-                            <thead>
-                                <tr class="main-tr">
-                                    <th> Hair Color </th>
-                                    <td class="hair-color">Obi-Wan Kenobi </td>
-                                </tr>
-                                <tr class="main-tr">
-                                    <th> Skin Color </th>
-                                    <td class="skin-color"> 172 </td>
-                                </tr>
-                                <tr class="main-tr">
-                                    <th> Eye Color </th>
-                                    <td class="eye-color"> 77 </td>
-                                </tr>
-                                <tr class="main-tr">
-                                    <th> Homeworld </th>
-                                    <td class="homeworld"> Male </td>
-                                </tr>
-                            </thead>
-                        </table>
-
-                    </div>
-
-
+    <div class="main-container">
+        <div class="content-container">
+            <div class="left-panel">
+                <div class="title-heading">
+                    <h1>Star Wars Data Cards</h1>
+                    <p>Character data for your favourite Star Wars character</p>
                 </div>
 
-            </div>
-            <div class="gif">
-                <img src="images/1280x1024-rocket-7485527-6136344.gif" alt="spaceship gif" class="gif-rotate">
+                <div class="search-box">
+                    <div class="row">
+                        <input type="text" name="input" id="input" disabled placeholder="Loading..." autocomplete="off">
+                        <button type="submit">Search</button>
+                    </div>
+                    <div class="result-box">
+                        <ul id="item-list">
+                            <!--items dynamically suggested-->
+                        </ul>
+                    </div>
+                </div>
             </div>
 
+            <div class="right-panel">
+                <div class="card-container">
+                    <div class="name-container">
+                        <h2 class="char-name">ID Card</h2>
+                    </div>
+
+                    <div class="main-info-container">
+                        <div class="card-main">
+                            <div class="char-details">
+                                <table class="table-1">
+                                    <thead>
+                                        <tr class="main-tr">
+                                            <th> Mass </th>
+                                            <td class="mass">Luke Skywalker </td>
+                                        </tr>
+                                        <tr class="main-tr">
+                                            <th> Height </th>
+                                            <td class="height"> 172 </td>
+                                        </tr>
+                                        <tr class="main-tr">
+                                            <th> Birth Year </th>
+                                            <td class="birth-year"> 77 </td>
+                                        </tr>
+                                        <tr class="main-tr">
+                                            <th> Gender </th>
+                                            <td class="gender"> Male </td>
+                                        </tr>
+                                    </thead>
+                                </table>
+
+                                <table class="table-2">
+                                    <thead>
+                                        <tr class="main-tr">
+                                            <th> Hair Color </th>
+                                            <td class="hair-color">Obi-Wan Kenobi </td>
+                                        </tr>
+                                        <tr class="main-tr">
+                                            <th> Skin Color </th>
+                                            <td class="skin-color"> 172 </td>
+                                        </tr>
+                                        <tr class="main-tr">
+                                            <th> Eye Color </th>
+                                            <td class="eye-color"> 77 </td>
+                                        </tr>
+                                        <tr class="main-tr">
+                                            <th> Homeworld </th>
+                                            <td class="homeworld"> Male </td>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
+        <div class="gif">
+            <img src="images/1280x1024-rocket-7485527-6136344.gif" alt="spaceship gif" class="gif-rotate">
+        </div>
     </div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="app.js"></script>
     <script type="module" src="autocomplete.js"></script>
 </body>
-
 </html>

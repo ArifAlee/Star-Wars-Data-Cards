@@ -1,182 +1,258 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-.container {
-  width: 90vh;
-  height: 60vh;
-  justify-self: center;
-  margin-top: 5%;
-  font-family: "Smooch Sans";
-  font-size: larger;
+body {
+  font-family: "Smooch Sans", sans-serif;
+  background-color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: 100%;
+}
+
+/* Left Panel Styles */
+.left-panel {
+  flex: 1;
+  min-width: 0; /* Allows flex item to shrink below content size */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .title-heading h1 {
-  font-family: "Star Wars", "Smooch Sans";
-  justify-content: center;
+  font-family: "Star Wars", "Smooch Sans", sans-serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: #000;
   text-align: center;
-}
-.title-heading p,
-.user-input,
-button {
-  justify-self: center;
-  text-align: center;
-  font-family: "Smooch Sans";
-  font-size: large;
-  cursor: pointer;
+  margin-bottom: 10px;
+  line-height: 1.1;
 }
 
-.search-box{
-  width: 500px;
+.title-heading p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: #333;
+  text-align: center;
+}
+
+.search-box {
+  width: 100%;
   background: #fff;
-  margin:50px auto 0;
   border-radius: 5px;
   border: 1px solid #999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-.row{
+
+.row {
   display: flex;
   align-items: center;
   padding: 10px 20px;
 }
-input{
+
+input {
   flex: 1;
-  height: 25px;
-  background: transparent;
+  height: 40px;
+  background: #fff;
   border: 0;
   outline: 0;
-  font-size: 18px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   color: #333;
-  font-family: "Smooch Sans";
+  font-family: "Smooch Sans", sans-serif;
   text-align: center;
-  
+}
+
+button {
+  background: #2e557c;
+  color: #fff;
+  border: 2px solid #ad7d37;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-left: 10px;
+  font-family: "Smooch Sans", sans-serif;
 
 }
-::placeholder{
-  color:#555
+
+button:hover {
+  background: #004a9e;
 }
+
+::placeholder {
+  color: #999;
+}
+
 .result-box ul {
   border-top: 1px solid #999;
-  padding: 15px 10px;
+  padding: 0;
+  margin: 0;
 }
+
 .result-box ul li {
   list-style: none;
-  border-radius:3px;
-  padding: 15px 10x;
+  padding: 8px 20px;
   cursor: pointer;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  text-align: center;
 }
-.result-box ul li:hover{
+
+.result-box ul li:hover {
   background: #e9f3ff;
 }
-.result-box{
-  max-height: 300px;
-  overflow-y:scroll;
-  text-align: center;
-  display: none;
 
+.result-box {
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
 }
 
-
+/* Right Panel Styles */
+.right-panel {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
 .card-container {
   background-color: #002F6C;
-  /* background-color:rgba(217, 201, 27, 0.167); */
-  border: 3px solid #ad7d37	;
-  border-bottom: 20px solid #ad7d37	;
+  border: 3px solid #ad7d37;
+  border-bottom: 20px solid #ad7d37;
   border-radius: 8px;
-  margin-top: 25px;
-  width: 60vh;
-  height: 30vh;
-  justify-self: center;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1/1.4; /* Maintain card proportions */
   display: flex;
   flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
-/* #111184 - blue*/ 
-/* #f2c300 yellow */
-/* #50C878 emerald geen 377e4f */ 
 
 .name-container {
   text-align: center;
   background-color: #2e557c;
-  height:75px;
+  padding: 15px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  color:#ad7d37	;
+  color: #ad7d37;
+}
+
+.char-name {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  margin: 0;
 }
 
 .main-info-container {
-  height: 100%;
-  width: 100%;
+  flex: 1;
   display: flex;
 }
 
-
-/* --------------*/
-
 .card-main {
-  margin-bottom:-25px;
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  border-top: 2px solid #ad7d37	;
+  border-top: 2px solid #ad7d37;
 }
 
 .char-details {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+  padding: 20px 10px;
 }
 
-.gif {
-  border-top: 2px solid #ad7d37	;
-  width:100%;
-  height: 85px; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; 
-  background-color: #2e557c; 
-}
-.gif-rotate {
-  transform: rotate(90deg);
-  width:100%;
-  height: 90%;
-  width: auto; 
-  position: relative;
-  animation: moveGif 10s linear infinite; 
-}
-@keyframes moveGif {
-  0% {
-      left: -100%; /* Start off-screen */
-  }
-  100% {
-      left: 100%; /* Move to the right edge of the footer */
-  }
-}
-
-
-/* TABLE -------------------------- */
-
-.top-td,
-.top-theaders {
-  text-align: center;
-  justify-self: center;
+.table-1, .table-2 {
+  color: #ad7d37;
+  width: 45%;
+  min-width: 150px;
 }
 
 .main-tr th {
   text-align: left;
-  padding-left: 25px;
-  height: 35px;
+  padding: 8px 5px;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
 }
 
 .main-tr td {
-  padding-left: 15px;
+  padding: 8px 5px;
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
 }
 
-.table-1 {
-  margin-left: -45px;
-  color: #ad7d37;
-}
-.table-2 {
-  margin-left: -175px;
-  width: 200px;
-  color:#ad7d37;
+.gif {
+  width: 100%;
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
+.gif-rotate {
+  transform: rotate(90deg);
+  height: 90%;
+  width: auto;
+  position: relative;
+  animation: moveGif 10s linear infinite;
+}
+
+@keyframes moveGif {
+  0% {
+      left: -100%;
+  }
+  100% {
+      left: 100%;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .content-container {
+      flex-direction: column;
+      gap: 30px;
+  }
+
+  .right-panel {
+      justify-content: center;
+  }
+
+  .card-container {
+      max-width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  .char-details {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .table-1, .table-2 {
+      width: 90%;
+      margin-bottom: 15px;
+  }
+
+  .card-container {
+      aspect-ratio: 1/1.6;
+  }
+}
