@@ -15,6 +15,10 @@ body {
   padding: 20px;
 }
 
+.front-card{
+  display: none;
+}
+
 .main-container {
   width: 100%;
   max-width: 1400px;
@@ -134,14 +138,27 @@ button:hover {
   top: 100%;
 }
 
+/* CARD FLIPPING SECTION */
+
+
 /* Right Panel Styles */
-.right-panel {
+.right-panel-1{
+  /* display: none; */
   flex: 1;
   min-width: 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
+.right-panel-2{
+  display: none;
+  flex: 1;
+  min-width: 0;
+  /* display: flex; */
+  justify-content: center;
+  align-items: flex-start;
+}
+
 
 .card-container {
   background-color: #002F6C;
@@ -207,6 +224,7 @@ button:hover {
   padding: 8px 5px;
   font-size: clamp(0.9rem, 1.8vw, 1.1rem);
 }
+
 
 .gif {
   width: 100%;
