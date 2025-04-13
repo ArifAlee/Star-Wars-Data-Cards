@@ -10,7 +10,11 @@ const skinColor = document.querySelector(".skin-color");
 const eyeColor = document.querySelector(".eye-color");
 const homeworld = document.querySelector(".homeworld");
 const resultsBox = document.querySelector(".result-box");
-
+const rotateBtn = document.querySelector(".rotate-btn")
+const frontCard = document.querySelector(".right-panel-1")
+const backCard = document.querySelector(".right-panel-2")
+const filmSpan = document.querySelector(".film-span")
+const vehicleSpan = document.querySelector(".vehicle-span")
 let characters;
 
 
@@ -92,6 +96,9 @@ const updateChar = (name) => {
 
 // Function to update all details fields
 const updateCharDetails = async (name) => {
+  filmSpan.textContent = "";
+  vehicleSpan.textContent = "";
+
   const charDetails = await getCharObj(name);
 
   const planetUrl = charDetails.homeworld
@@ -108,8 +115,8 @@ const updateCharDetails = async (name) => {
 
   if (charDetails) {
     charh1.textContent = charDetails.name
-    mass.textContent = charDetails.mass;
-    height.textContent = charDetails.height;
+    mass.textContent = `${charDetails.mass} kg`;
+    height.textContent = `${charDetails.height} cm`;
     birthYear.textContent = charDetails.birth_year;
     gender.textContent = charDetails.gender;
     hairColor.textContent = charDetails.hair_color;
@@ -119,18 +126,42 @@ const updateCharDetails = async (name) => {
   } else {
     console.log("Character details not found");
   }
+
+  //DISPLAY FILM AND VEHICLES AT THE BACK OF CARD
+  films.map(film => {
+    const text = document.createElement("P");
+    text.textContent = film;
+    text.style.fontWeight = "300";
+    text.style.display = "flex";
+    filmSpan.appendChild(text)
+  })
+
+  starShips.map(ship => {
+  const text = document.createElement("P");
+  text.textContent = ship;
+  text.style.fontWeight = "300";
+  text.style.display = "flex";
+  vehicleSpan.appendChild(text)
+  console.dir(vehicleSpan)
+  })
+
+  
 };
+
 
 
 // USER INPUT HANDLER
 const handleUserInput = () => {
   const userInput = input.value.trim();
+
   if (userInput) {
     updateChar(userInput);
     updateCharDetails(userInput);
   }
   resultsBox.style.display = "none";
-};
+  
+    
+  }
 
 // EVENT LISTENERS
 document.addEventListener("DOMContentLoaded", async () => {
@@ -152,4 +183,12 @@ input.addEventListener("keypress", (event) => {
     resultsBox.style.display = "none"; // Hide the results box when no suggestions
   }
 });
+
+rotateBtn.addEventListener("click", () => {
+  frontCard.classList.toggle("display-flex")
+  frontCard.classList.toggle("display-none")
+
+  backCard.classList.toggle("display-flex")
+  backCard.classList.toggle("display-none")
+})
 
