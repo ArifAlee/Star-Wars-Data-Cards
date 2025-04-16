@@ -15,6 +15,45 @@ body {
   padding: 20px;
 }
 
+/* ALERT  */
+.alert-warning {
+  display: none;
+  border-style: none;
+  border-left-style: solid;
+  border-left-width: thick;
+  border-color: #f44336;
+  background-color: #f4c3c6;
+  padding-left: 4px;
+  border-radius: 15px;
+  padding: 20px;
+  color: black;
+  }
+  .alert {
+  margin-left: 15px;
+  color: black;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  }
+  .alert:hover {
+  color: white;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 100;
+  }
+
+  /* End */
+
+
 .rotate-btn{
   margin: 0;
   padding: 0;

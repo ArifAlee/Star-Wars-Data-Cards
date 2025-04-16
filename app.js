@@ -15,6 +15,7 @@ const frontCard = document.querySelector(".right-panel-1")
 const backCard = document.querySelector(".right-panel-2")
 const filmSpan = document.querySelector(".film-span")
 const vehicleSpan = document.querySelector(".vehicle-span")
+const alert = document.querySelector(".alert-warning")
 let characters;
 
 
@@ -33,7 +34,10 @@ const getAllCharacters = async () => {
     console.log("Characters loaded")
     return characters;
   } catch (error) {
-    console.log("Error fetching characters:", error);
+    if(error){
+      console.log("Error fetching characters:", error);
+      alert.style.display = "block";
+    }
     return [];
   }
 };
